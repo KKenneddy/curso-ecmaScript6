@@ -59,7 +59,7 @@ const a = 'b';
 a = 'a';
 console.log(a);
 
-let name = 'Kennedy';
+let nameA = 'Kennedy';
 let age = 24;
 
 let obj = {name: name, age: age};
@@ -79,11 +79,11 @@ let listOfNames = names.map(function (item){
 let listOfNames2 = names.map(item => console.log(item.name));
 
 const listOfNames3 = (name, age, country)=>{
-    ...
+    //...
 }
 
 const listOfNames4 = name => {
-    ...
+    //...
 }
 
 const square = num => num * num;
@@ -104,3 +104,37 @@ helloPromise()
     .catch((err) => {
         console.log(err)
     });
+
+class Calculator {
+    constructor (){
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    sum(valorA, valueB){
+        this.valueA = valorA;
+        this.valueB =valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(2, 8));
+
+import { hello } from './module';
+
+hello();
+
+function* helloWorld(){
+    if(true){
+        yield 'Hello, '
+    }
+    if(true){
+        yield 'world';
+    }
+};
+
+const generateHello = helloWorld();
+
+console.log(generateHello.next().value);
+console.log(generateHello.next().value);
+console.log(generateHello.next().value);
